@@ -1,0 +1,4 @@
+name,url,target_price,selector,selector_type,notes
+HTTPBin JSON demo,https://httpbin.org/json,0.01,slideshow.author,json,Public JSON sample — author string demos parse path (no numeric price → status only)
+Example.com HTML,https://example.com/,999.99,p,css,Static HTML demo — body copy has no price; expect parse_failed
+JSONPlaceholder post,https://jsonplaceholder.typicode.com/posts/1,1.00,id,json,Public JSON API — numeric id stand-in for price (alerts when id ≤ target)

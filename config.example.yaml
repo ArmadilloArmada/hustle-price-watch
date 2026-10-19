@@ -1,0 +1,9 @@
+# Copy to config.yaml if you want overrides (optional for MVP).
+# Default watchlist path: watchlist.csv
+
+watchlist: watchlist.csv
+out_dir: out
+user_agent: "hustle-price-watch/0.1 (+https://github.com/ArmadilloArmada/hustle-price-watch; polite public fetch)"
+request_timeout_seconds: 20
+delay_between_requests_seconds: 1.0
+max_retries: 1

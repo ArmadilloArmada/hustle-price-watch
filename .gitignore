@@ -1,0 +1,14 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.dist/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+config.yaml
+out/alerts-*.md
+.DS_Store

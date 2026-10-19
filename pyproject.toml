@@ -1,0 +1,22 @@
+[project]
+name = "hustle-price-watch"
+version = "0.1.0"
+description = "Price/stock watch alerts for public product pages (Tier-0 MVP)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27.0",
+  "beautifulsoup4>=4.12.0",
+  "lxml>=5.0.0",
+]
+
+[project.scripts]
+price-watch = "src.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
