@@ -97,10 +97,21 @@ def render_markdown(report: RunReport) -> str:
 
     lines.extend(
         [
+            "## Next step (human approve → free export)",
+            "",
+            "Review this file. When approved, export an email draft + mailto (never auto-sends):",
+            "",
+            "```bash",
+            f"python -m src.export --approve out/alerts-{report.run_date.isoformat()}.md",
+            "```",
+            "",
+            "Writes `out/export/email-draft-*.md` and `out/export/mailto-*.txt`.",
+            "",
             "## Compliance",
             "",
             "- Public pages / public JSON only; polite User-Agent and request delay.",
             "- No login, cookies, CAPTCHA bypass, or credentialed access.",
+            "- Delivery is human-gated export only — this tool never emails automatically.",
             "- If you later monetize via affiliate links, include an FTC affiliate disclosure.",
             "",
         ]

@@ -12,6 +12,7 @@ dependencies = [
 
 [project.scripts]
 price-watch = "src.main:main"
+price-watch-export = "src.export:main"
 
 [build-system]
 requires = ["setuptools>=68"]

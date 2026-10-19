@@ -1,8 +1,13 @@
 # Copy to config.yaml if you want overrides (optional for MVP).
 # Default watchlist path: watchlist.csv
+#
+# Delivery is human-gated: review out/alerts-*.md, then run
+#   python -m src.export --approve out/alerts-YYYY-MM-DD.md
+# which only writes out/export/ (email-draft + mailto). Never auto-emails.
 
 watchlist: watchlist.csv
 out_dir: out
+export_dir: out/export
 user_agent: "hustle-price-watch/0.1 (+https://github.com/ArmadilloArmada/hustle-price-watch; polite public fetch)"
 request_timeout_seconds: 20
 delay_between_requests_seconds: 1.0
