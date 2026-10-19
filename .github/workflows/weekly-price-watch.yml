@@ -1,0 +1,47 @@
+# Weekly draft price alerts — human reviews / approves / exports locally.
+# Does NOT send email and does NOT call SMTP/webhooks.
+name: Weekly price watch
+
+on:
+  schedule:
+    # Monday 14:30 UTC
+    - cron: "30 14 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Ensure config.yaml
+        run: |
+          if [ ! -f config.yaml ]; then
+            cp config.example.yaml config.yaml
+          fi
+
+      - name: Run price-watch pipeline (draft only)
+        # Templated alerts — no OPENAI_API_KEY required.
+        run: python -m src.main
+
+      - name: Upload out/ as draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: price-watch-draft
+          path: out/
+          if-no-files-found: error
+          retention-days: 14

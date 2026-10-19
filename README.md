@@ -120,6 +120,10 @@ out/
     mailto-*.txt       # generated after --approve (gitignored)
 ```
 
+## Weekly schedule (GitHub Actions)
+
+Every Monday at **14:30 UTC**, [`.github/workflows/weekly-price-watch.yml`](.github/workflows/weekly-price-watch.yml) runs a **draft-only** pipeline (`python -m src.main`) and uploads artifact **`price-watch-draft`** (no approve/export/send). Download from the Actions run → **Artifacts**, unzip into `out/`, then approve + export locally.
+
 ## Compliance & affiliate disclosure
 
 - **Public sources only.** Respect `robots.txt` / site Terms of Service. Prefer official public JSON/APIs when available.
