@@ -11,4 +11,6 @@ build/
 .ruff_cache/
 config.yaml
 out/alerts-*.md
+out/export/email-draft-*.md
+out/export/mailto-*.txt
 .DS_Store
